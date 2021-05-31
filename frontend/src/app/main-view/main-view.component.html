@@ -7,8 +7,8 @@
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
   <div>
-    <span class="toolbar-name">personal-az-spa</span>
-    <span class="toolbar-desc">personal-az-spa</span>
+    <span class="toolbar-name">{{name}}</span>
+    <span class="toolbar-desc">{{descryption}}</span>
   </div>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
@@ -16,14 +16,17 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a *ngFor="let item of content | keyvalue"
+         mat-list-item
+         routerLink="/main-view/{{item.key}}"
+         (click)="isHandsetNow && drawer.close()">
+        {{item.value.mainTag}}
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-content-view></app-content-view>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

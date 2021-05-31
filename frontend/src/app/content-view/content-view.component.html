@@ -1,7 +1,5 @@
 <header class="content-header">
-  <h1>Simple personal spa with Angular</h1>
+  <h1>{{title}}</h1>
 </header>
-<main class="content-main">
-  <p>Hello, world!</p>
-</main>
+<main class="content-main" [innerHTML]="this.content"></main>
 

@@ -8,3 +8,7 @@ header.content-header {
 main.content-main {
   padding: 20px 0 0 10%;
 }
+
+a:visited {
+  color: white;
+}
