@@ -11,7 +11,7 @@ const notFound = new EntryContent('404 Not Found', 'Post you are looking for can
 })
 export class ContentDataService {
   private readonly contents: {[id: string]: EntryContent} = {
-    bio: new EntryContent('Name', `
+    bio: new EntryContent('Bio', `
 <div>
 Someones bio goes here
 </div>`
