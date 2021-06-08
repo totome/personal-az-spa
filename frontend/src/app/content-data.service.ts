@@ -13,23 +13,35 @@ export class ContentDataService {
   private readonly contents: {[id: string]: EntryContent} = {
     bio: new EntryContent('Bio', `
 <div>
-Someones bio goes here
+My name is Tomasz Tomczyk. I'm a software developer focused on web technologies.
+I have nearly 3 years hands on experience in developing web services for business critical infrastructure in Java and Spring.
+Besides stack I'm using at work, I'm interested in frontend technologies (learning JS and TypeScript), and cloud infrastructure.
+As of now, I'm exploring Angular framework and Azure cloud, which this website runs on.
+I also had an opportunity to work at project written in Golang, develop embedded Java and C++ software, and write tests in TTCN-3 <a href="https://en.wikipedia.org/wiki/TTCN-3">What is this ?!?</a>
+</br>
+I have a bachelor's degree in mathematics. I majored in mathematics with computer science at University of Wroclaw.
+I live in Wroclaw with my better half, and our 1yo son.
 </div>`
     ),
     contact: new EntryContent('Contact', `
-<a href='#'>a link</a>`
+<p>Here are some links which you can reach me:</p>
+<ul>
+<li><a class="long-link" href="https://www.linkedin.com/in/tomasz-tomczyk-software-developer">LinkedIn profile</a>
+<li><a class="long-link" href="https://github.com/totome">GitHub repository</a>
+</li>
+</ul>`
     ),
     experience: new EntryContent('Work experience', `
-<h1>Work place 1</h1>
-<p>work place desc</p>
-<h2>Work place 2</h2>
-<p>desc</p>
+<h3>Luxoft Oct 2018 - Present</h3>
+<p>Java server applications and embedded software development.</p>
+<h3>Nokia Jun 2014 - May 2016</h3>
+<p>Embedded software development, writing code in C++ and component level tests in TTCN-3.</p>
     `
     )};
   private readonly entries: {[id: string]: EntryInfo} = {
-    bio: new EntryInfo('Biography'),
-    contact: new EntryInfo('Contact info'),
-    experience: new EntryInfo('Work experience')
+    bio: new EntryInfo('About me'),
+    contact: new EntryInfo('Contact'),
+    experience: new EntryInfo('Work Experience')
   };
 
   constructor() { }
@@ -43,10 +55,10 @@ Someones bio goes here
   }
 
   getFullName(): Observable<string> {
-    return of('Your Name');
+    return of('Tomasz Tomczyk');
   }
 
   getDescryption(): Observable<string> {
-    return of('some description');
+    return of('software developer');
   }
 }
